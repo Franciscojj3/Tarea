@@ -29,6 +29,10 @@
       var osm  = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '<a href="http://www.openstreetmap.org/">OpenStreetMap</a>'
       });
+      var box  = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '<a href="http://www.openstreetmap.org/">OpenStreetMap</a>'
+      });
+	    
       osm.addTo(mapa);
 	    
       // retorna un color con base en la cantidad de especies
