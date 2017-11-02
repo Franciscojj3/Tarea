@@ -23,6 +23,7 @@
 
     <script src="js/riqespecies_avesacures-cr_ramsar-2017-wgs84.js" type="text/javascript"></script>
     <script src="js/regPresGBIFAvesAcuRes-cr_ramsar-2017-wgs84.js"  type="text/javascript"></script>
+    <script src="js/Cantones.js"  type="text/javascript"></script>
 
     <script>
       var mapa = L.map('map').setView([9.7, -84], 8);
@@ -44,17 +45,17 @@
 	       d > 20 ? '#c7e6db' :
 		        '#2c7bb6';
       }	    
-      function infoRiqueza(feature, layer) {
-	var popupContent = "Riqueza de especies: ";
-	if (feature.properties && feature.properties.spprichnes) {
-	  popupContent += feature.properties.spprichnes;
+      function infoPoblacion(feature, layer) {
+	var popupContent = "Poblacion 2011: ";
+	if (feature.properties && feature.properties.POB_2011_TOT) {
+	  popupContent += feature.properties.POB_2011_TOT;
 	} else {
 	  popupContent += 0; 
 	}
 	layer.bindPopup(popupContent);
       }	    	    
 	    
-      var riqueza = L.geoJson(riqespecies, {
+      var poblacion = L.geoJson(Cantones, {
         style: function (feature) {
 	  return {
 	    weight: 2,
@@ -62,13 +63,13 @@
 	    color: 'white',
 	    dashArray: '3',
 	    fillOpacity: 0.7,		  
-            fillColor: color(feature.properties.spprichnes)
+            fillColor: color(feature.properties.POB_2011_TOT)
           };
         },
 	      
 	onEachFeature: infoRiqueza
       })
-      riqueza.addTo(mapa);
+      poblacion.addTo(mapa);
 	    
 	    
       function infoPresencia(feature, layer) {
@@ -108,7 +109,7 @@
 	"MapBox" : mbox
       };
       var overlays = {
-	"Riqueza de especies": riqueza,
+	"Riqueza de especies": poblacion,
 	"Registros de presencia": registrosPresencia
       };
       L.control.layers(baseLayers, overlays).addTo(mapa);
