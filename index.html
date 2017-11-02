@@ -48,8 +48,8 @@
 	       d >  3 ? '#fc9272' :
 		        '#fcbba1';
       }	    
-      function infoRiqueza(feature, layer) {
-	var popupContent = "Riqueza de especies: ";
+      function infoPobla(feature, layer) {
+	var popupContent = "Poblacion Total: ";
 	if (feature.properties && feature.properties.POB_2011_T) {
 	  popupContent += feature.properties.POB_2011_T;
 	} else {
@@ -58,7 +58,7 @@
 	layer.bindPopup(popupContent);
       }	    	    
 	    
-      var riqueza = L.geoJson(riqespecies, {
+      var poblacion = L.geoJson(pobla, {
         style: function (feature) {
 	  return {
 	    weight: 2,
@@ -70,9 +70,9 @@
           };
         },
 	      
-	onEachFeature: infoRiqueza
+	onEachFeature: infoPobla
       })
-      riqueza.addTo(mapa);
+      pobla.addTo(mapa);
 	    
 	    
       function infoPresencia(feature, layer) {
