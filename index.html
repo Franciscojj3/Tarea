@@ -50,7 +50,7 @@
 	}
 	layer.bindPopup(popupContent);
       }	     
-      registrocanton = L.geoJson(canton, {
+      registrocanton = L.geoJson(pobla, {
         style: function (feature) {
 	  return {
             fillColor: '#ccffcc', 
@@ -94,7 +94,7 @@
 	layer.bindPopup("Nombre de Cantón: "+feature.properties.NCANTON+'</b><br>'+popupContent);
       }	    	    
 	    
-      var pob = L.geoJson(canton, {
+      var pob = L.geoJson(pobla, {
         style: function (feature) {
 	  return {
 	    weight: 2,
