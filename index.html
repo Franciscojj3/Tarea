@@ -65,9 +65,9 @@
 //	  });
 //	}, 
 	      
-	onEachFeature: infocanton
-      })
-      registrocanton.addTo(mapa);	
+//	onEachFeature: infocanton
+  //    })
+    //  registrocanton.addTo(mapa);	
 		
 	
 	<!-- Definición de poblacion del Cantón-->
@@ -104,14 +104,9 @@
 	onEachFeature: poblacion
       })
       pob.addTo(mapa);
-	    	
-		
-	
       	    
 	  <!-- Visualizacion -->  
-	  
-	  L.control.scale().addTo(mapa)
-	  
+      L.control.scale().addTo(mapa)	  
       var baseLayers = {
 	"OpenStreetMap": osm,
 	"MapBox" : mbox
@@ -119,16 +114,11 @@
 	  
    var overlays = {
 	"Nombre de Cantón: ": registrocanton,
-	"Población Total: ": pob
+	"Población: ": pob
       };
   
-  
-  
-  
-  
-  
-      L.control.layers(baseLayers, overlays).addTo(mapa);
-	    
+   
+      L.control.layers(baseLayers, overlays).addTo(mapa);  
       L.control.mousePosition().addTo(mapa);
 
     </script>
