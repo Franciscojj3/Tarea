@@ -38,11 +38,8 @@
       osm.addTo(mapa);
 	    
 	    
-      // Defino la variable canton 
-	    
-	<!-- Definición de variable Cantón-->
-		
-		function infocanton(feature, layer) {
+      // Defino la variable canton 		
+	function infocanton(feature, layer) {
 	var popupContent = "Nombre de Cantón: ";
 	if (feature.properties && feature.properties.NCANTON) {
 	  popupContent += feature.properties.NCANTON;
