@@ -55,7 +55,7 @@
 	layer.bindPopup(popupContent);
       }	    	    
 	    
-      var poblacion = L.geoJson(Cantones, {
+      var poblacion = L.geoJson(Pobla, {
         style: function (feature) {
 	  return {
 	    weight: 2,
@@ -109,7 +109,7 @@
 	"MapBox" : mbox
       };
       var overlays = {
-	"Riqueza de especies": poblacion,
+	"Riqueza de especies": pobla,
 	"Registros de presencia": registrosPresencia
       };
       L.control.layers(baseLayers, overlays).addTo(mapa);
